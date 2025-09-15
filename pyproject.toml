@@ -19,9 +19,9 @@ authors = [
     { name = "Michael Gauci", email = "michaelgauci.mt@gmail.com"}
 ]
 keywords = [
-    # # "python", 
-    ## "urban", 
-    ## "design", 
+    # # "python",
+    ## "urban",
+    ## "design",
     ## "demo"
     #
 ]
@@ -43,6 +43,7 @@ dev = [
   "cruft",
   "ruff",
   "pytest",
+  "pytest-cov",
   "hypothesis",
   "mkdocs",
   "mkdocs-material",
@@ -79,7 +80,9 @@ pythonpath = [
 testpaths = "tests"
 addopts = [
     "--import-mode=importlib",  # allow tox to run tests against installed version
-    "--cov-config=pyproject.toml --cov --cov-report=",
+    "--cov",  # provide coverage
+    "--cov-config=pyproject.toml",
+    "--cov-report=",
     "-v"  # enable verbose mode
 ]
 markers = []
@@ -91,23 +94,20 @@ tests_dir = [ "tests/" ]
 
 [tool.coverage.run]
 branch = true
-# omit = [
-#   "tests/*"
-# ]
 
-# [tool.coverage.report]
-# exclude_also = [
-#     "def __repr__",
-#     "if self.debug:",
-#     "if settings.DEBUG",
-#     "raise AssertionError",
-#     "raise NotImplementedError",
-#     "if 0:",
-#     "if __name__ == .__main__.:",
-#     "if TYPE_CHECKING:",
-#     "class .*\bProtocol\):",
-#     "@(abc\.)?abstractmethod",
-# ]
+[tool.coverage.report]
+exclude_also = [
+  "def __repr__",
+  "if self.debug:",
+  "if settings.DEBUG",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if 0:",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "class .*\\bProtocol\\):",
+  "@(abc\\.)?abstractmethod",
+]
 
 [tool.setuptools]
 packages = ["src"]
