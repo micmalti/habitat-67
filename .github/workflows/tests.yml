@@ -20,5 +20,5 @@ jobs:
         with:
           verbose: true
           fail_ci_if_error: true
-          directory: ./.coverage/
+          directory: ./coverage/
           token: ${{ secrets.CODECOV_TOKEN }}

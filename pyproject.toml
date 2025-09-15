@@ -85,14 +85,14 @@ addopts = [
     "--import-mode=importlib",  # allow tox to run tests against installed version
     "--cov",  # provide coverage
     "--cov-config=pyproject.toml",
-    "--cov-report=xml:./.coverage/report.xml",
+    "--cov-report=xml:./coverage/report.xml",
     "-v"  # enable verbose mode
 ]
 markers = []
 xfail_strict = true  # avoid overlooking passing tests marked as expected to fail
 
 [tool.mutmut]
-paths_to_mutate = [ "src/habitat-67/" ]
+paths_to_mutate = [ "src/habitat-67·/" ]
 tests_dir = [ "tests/" ]
 
 [tool.coverage.run]
