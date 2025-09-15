@@ -1,0 +1,78 @@
+/* Set body background colour */
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: #14151a !important;
+}
+
+/* Set custom accent colour */
+/* [data-md-color-scheme = "default"] {
+  --md-accent-fg-color: hsla(#{hex2hsl($clr-indigo-a200)}, 1);
+  --md-accent-fg-color--transparent: hsla(#{hex2hsl($clr-indigo-a200)}, 0.1);
+  --md-accent-bg-color: hsla(0, 0%, 100%, 1);
+  --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
+} */
+
+/* Set accent colour for top button */
+[data-md-color-scheme="slate"] .md-top,
+[data-md-color-scheme="default"] .md-top:hover {
+  background-color: #272a35;
+  color: white;
+}
+[data-md-color-scheme="default"] .md-top,
+[data-md-color-scheme="slate"] .md-top:hover {
+  background-color: white;
+  color: #272a35;
+}
+
+/* Set accent colour for page elements */
+/* .md-nav__icon:hover, */
+.md-typeset .md-content__button:hover,
+.md-clipboard:hover {
+  color: var(--md-primary-bg-color) !important;
+}
+.md-typeset .md-content__button:focus,
+.md-clipboard:focus {
+  color: var(--md-default-fg-color--lighter) !important;
+}
+.md-sidebar__scrollwrap:hover {
+  scrollbar-color: var(--md-primary-fg-color) #0000;
+}
+
+/* Remove border from active source code block */
+details.quote:focus-within {
+  box-shadow: none !important;
+}
+
+/* Remove border from active admonition */
+.md-typeset details,
+.md-typeset details:focus-within {
+  box-shadow: var(--md-shadow-z1) !important;
+}
+
+/* Add rounded corners to code blocks */
+code {
+    border-radius: 0.2rem !important;
+}
+
+/* Set padding for inline code blocks */
+p code {
+    border-radius: .3rem !important;
+    padding-block: .2rem !important;
+    padding-inline: .3rem !important;
+    box-shadow: none !important;
+}
+
+/* Configure font headings */
+.md-typeset h1 {
+    font-weight: 600;
+    color: var(--md-primary-bg-color) !important;
+}
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6
+ {
+    font-weight: 500 !important;
+    color: var(--md-primary-bg-color) !important;
+    /* margin-top: 3rem !important; */
+}

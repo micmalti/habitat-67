@@ -1,0 +1,79 @@
+/* Remove logo */
+/* .md-header__button {
+    display: none !important;
+}
+.md-header__topic {
+    padding-left: .6rem !important;
+} */
+
+/* Increase logo size */
+/* .md-header__button.md-logo {
+    padding: 0.5rem !important;
+}
+.md-header__button.md-logo img {
+    height: 1.5rem;
+} */
+
+/* Improve logo layout */
+.md-header__button.md-logo {
+    padding: 0.33rem !important;
+}
+.md-header__title {
+    margin-left: 0rem !important;
+}
+
+/* Dynamically switch logo based on active theme */
+#logo_light {
+    display: var(--md-footer-logo-light);
+}
+#logo_dark {
+    display: var(--md-footer-logo-dark);
+}
+[data-md-color-scheme="default"] {
+    --md-footer-logo-dark: none;
+    --md-footer-logo-light: block;
+}
+[data-md-color-scheme="slate"] {
+    --md-footer-logo-dark: block;
+    --md-footer-logo-light: none;
+}
+
+/* Configure search bar */
+[data-md-color-primary="white"] .md-search__form {
+    background-color: transparent !important;
+}
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  background-color: var(--md-default-bg-color) !important;
+}
+.md-header__option {
+    margin-left: 1rem !important;
+}
+[data-md-color-scheme="default"] .md-search__scrollwrap:hover {
+  scrollbar-color: var(--md-default-fg-color--light) #0000;
+}
+[data-md-color-scheme="slate"] .md-search__scrollwrap:hover {
+  scrollbar-color: var(--md-default-fg-color) #0000;
+}
+.md-search-result__article .md-typeset h1 {
+    font-weight: 400 !important;
+}
+
+/* Control position of theme toggle button */
+.md-header__source {
+    margin-left: 0 !important;
+}
+
+/* Add header line separator for dark theme */
+/* [data-md-color-scheme="slate"] .md-tabs {
+    border-bottom: .05rem solid #ffffff28 !important;
+} */
+
+/* Remove header line separator */
+[data-md-color-scheme="default"] .md-tabs {
+    border-bottom: none !important;
+}
+
+/* Remove header shadow */
+.md-header--shadow {
+    box-shadow: none !important;
+}

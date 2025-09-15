@@ -1,0 +1,33 @@
+/* Increase white space between body and footer */
+.md-main__inner {
+  margin-bottom: 10rem !important;
+}
+
+/* Dynamically switch footer based on active theme */
+[data-md-color-scheme="default"] .md-footer {
+    --md-footer-fg-color: #14151a !important;
+    --md-footer-bg-color: white !important;
+    --md-footer-bg-color--dark: white !important;
+    --md-default-fg-color--lightest: #00000047 !important;
+}
+[data-md-color-scheme="slate"] .md-footer {
+    --md-footer-fg-color: white !important;
+    --md-footer-bg-color: #14151a !important;
+    --md-footer-bg-color--dark: #14151a !important;
+}
+[data-md-color-scheme="slate"] .md-copyright {
+  color: var(--md-default-fg-color--light);
+}
+[data-md-color-scheme="default"] .md-copyright {
+  color: var(--md-default-fg-color--lightest);
+}
+[data-md-color-scheme="default"] .md-footer-meta.md-typeset a {
+  color: var(--md-default-fg-color--light);
+}
+/* Add footer line separator */
+/* [data-md-color-scheme="default"] .md-footer {
+	border-top: .05rem solid #00000012;
+}
+[data-md-color-scheme="slate"] .md-footer {
+    border-top: .05rem solid #ffffff28 !important;
+} */

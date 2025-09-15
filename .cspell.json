@@ -1,0 +1,36 @@
+{
+    "language": "en",
+    "enabledFileTypes": {
+        "*": false,
+        "python": true,
+        "markdown": true,
+        "mdx": true
+    },
+    "languageSettings": [
+        {
+            "languageId": "python",
+            "ignoreRegExpList": [
+                "string_raw"
+            ]
+        },
+        {
+            "languageId": "markdown,mdx",
+            "ignoreRegExpList": [
+                "/`[^`]*`/g", // Exclude words between backticks
+                "/<(?!!--)[^>]*>/g" // Exclude HTML tags but not comments
+            ]
+        }
+    ],
+    "words": [
+        "codespell",
+        "Freepik",
+        "Inkscape",
+        "mkdocstrings",
+        "Mutmut",
+        "Opengrep",
+        "Pictogrammers",
+        "pyproject",
+        "Pyright",
+        "pytest"
+    ] // list of ignored words
+}

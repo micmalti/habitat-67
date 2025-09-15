@@ -1,0 +1,189 @@
+site_name: "habitat-67"
+site_description: "A liveable city from the distant past"
+site_url: https://micmalti.github.io/habitat-67
+repo_url: https://github.com/micmalti/habitat-67
+repo_name: "micmalti/habitat-67"
+# site_author: "Michael Gauci"
+# copyright: Copyright &copy; 2025 Michael Gauci
+edit_uri: edit/master/docs/
+watch:
+  - src/habitat-67
+  - docs/overrides/partials
+  - gen_ref_pages.py
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+nav:
+  - Overview:
+    - index.md
+    - Tutorials:
+      - level/index.md
+      - level/usage_test.md
+  - User guide: getting_started.md
+  - API reference: reference/
+  - Development: CONTRIBUTING.md
+  - Release notes: CHANGELOG.md
+  - "Report an Issue": "https://github.com/micmalti/habitat-67/issues"
+theme:
+  name: material
+  font:
+    text: Geist
+    code: Geist Mono
+  logo_dark: assets/book-open-page-variant-outline-light.svg
+  logo_light: assets/book-open-page-variant-outline.svg
+  # logo: assets/book-open-page-variant-outline.svg
+  favicon: assets/book-open-page-variant-outline.svg
+  icon:
+    admonition:
+      quote: octicons/code-16
+  custom_dir: docs/overrides
+  features:
+    # - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    # - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - navigation.footer
+    - navigation.path
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.follow
+  language: en
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: bootstrap/circle-half-full
+        name: Switch to light mode
+      primary: black
+      # accent: custom
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: bootstrap/circle-half-full
+        name: Switch to dark mode
+      primary: white
+      # accent: custom
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: bootstrap/circle-half-full-light
+        name: Switch to system preference
+      primary: black
+      # accent: custom
+extra_css:
+  - styles/header.css
+  - styles/footer.css
+  - styles/misc.css
+  - styles/mkdocstrings.css
+  - styles/navigation.css
+markdown_extensions:
+  - attr_list
+  - admonition
+  # - callouts:
+  #     strip_period: false
+  - footnotes
+  - pymdownx.details
+  # - pymdownx.mark
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - docs/overrides/.icons
+  - pymdownx.highlight:
+      anchor_linenums: false
+      pygments_lang_class: true
+      # default_lang: python
+  # - pymdownx.inlinehilite
+  # - pymdownx.arithmatex:
+  # generic: true
+  - pymdownx.magiclink
+  - pymdownx.snippets:
+      base_path: !relative $config_dir
+      check_paths: true
+  # - tables
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  # - pymdownx.tasklist:
+  # custom_checkbox: true
+  # - pymdownx.tilde
+  # - pymdownx.blocks.admonition:
+  #     types:
+  #       - note
+  #       - attention
+  #       - caution
+  #       - danger
+  #       - error
+  #       - tip
+  #       - hint
+  #       - warning
+  #       - info
+  #       - check
+  # - pymdownx.blocks.details: null
+  # - pymdownx.blocks.tab:
+  #     alternate_style: true
+  - toc:
+      permalink: true
+      title: On This Page
+
+plugins:
+  - search
+  - gen-files:
+      scripts:
+      - gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - autorefs
+  # - markdown-exec
+  - section-index
+  # - coverage
+  - mkdocstrings:
+      handlers:
+        python:
+          inventories:
+            - https://docs.python.org/3/objects.inv
+          paths: [src/habitat-67]
+          options:
+            # backlinks: tree
+            docstring_options:
+              ignore_init_summary: true
+            docstring_section_style: table
+            filters: ["!^_"]
+            heading_level: 1
+            inherited_members: true
+            merge_init_into_class: true
+            parameter_headings: true
+            separate_signature: true
+            show_root_heading: true
+            show_root_full_path: false
+            show_signature_annotations: true
+            show_source: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary: false
+            show_submodules: false
+            group_by_category: true
+            # members_order: alphabetical
+            # show_if_no_docstring: true
+            unwrap_annotated: true
+  - git-revision-date-localized:
+      type: timeago
+      enabled: !ENV [CI, false]
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - minify:
+      minify_html: !ENV [CI, false]
+      cache_safe: !ENV [CI, false]
+      css_files:
+          - docs/styles/*.css
