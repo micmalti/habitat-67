@@ -55,6 +55,9 @@ dev = [
   "mkdocs-section-index"
 ]
 ci = [
+  "lxml",
+  "pandas",
+  "requests",
   "ruff",
   "pytest",
   "pytest-cov",
