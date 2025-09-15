@@ -85,7 +85,7 @@ addopts = [
     "--import-mode=importlib",  # allow tox to run tests against installed version
     "--cov",  # provide coverage
     "--cov-config=pyproject.toml",
-    "--cov-report=",
+    "--cov-report=xml:./.coverage/report.xml",
     "-v"  # enable verbose mode
 ]
 markers = []
