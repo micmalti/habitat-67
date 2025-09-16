@@ -12,19 +12,18 @@ jobs:
       - uses: errata-ai/vale-action@v2.1.1
   cspell:
     name: Check spelling
-    spellcheck:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v4
-        - uses: streetsidesoftware/cspell-action@v7
-          with:
-            use_cspell_files: true
-            # files: |
-            #   "**/*.{md,mdx}"
-            #   "src/**/*.py"
-            #   "tests/**/*.py"
-            check_dot_files: explicit
-            strict: false
-            incremental_files_only: true
-            config: '.'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: streetsidesoftware/cspell-action@v7
+        with:
+          use_cspell_files: true
+          # files: |
+          #   "**/*.{md,mdx}"
+          #   "src/**/*.py"
+          #   "tests/**/*.py"
+          check_dot_files: explicit
+          strict: false
+          incremental_files_only: true
+          config: '.'
   
